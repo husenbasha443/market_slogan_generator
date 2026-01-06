@@ -7,12 +7,12 @@ from prompts.prompts_library import GENERAL_SLOGAN_PROMPT
 
 load_dotenv()
 
+
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 st.set_page_config(page_title="Marketing Slogan Generator", layout="centered")
 
 st.title(" Marketing Slogan Generator")
-st.write("Generate short marketing slogans using prompt engineering and Groq LLMs.")
 
 product_name = st.text_input("Product Name", "Fitness Tracker")
 target_audience = st.text_input("Target Audience", "Young Professionals")
@@ -38,5 +38,5 @@ if st.button("Generate Slogan"):
         )
 
     st.success("Slogan Generated!")
-    st.markdown("### 🏷️ Marketing Slogan")
+    st.markdown("###  Marketing Slogan")
     st.write(response.choices[0].message.content)
